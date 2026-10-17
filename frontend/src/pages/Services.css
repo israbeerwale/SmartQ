@@ -1,0 +1,680 @@
+/* SmartQ — Premium Dark Services Page */
+
+.services-page {
+  min-height: 100vh;
+  padding: 48px clamp(20px, 5vw, 72px);
+  color: #f1f5ff;
+  background:
+    radial-gradient(ellipse at 10% 0%, rgba(139, 92, 246, 0.13), transparent 38%),
+    radial-gradient(ellipse at 100% 30%, rgba(45, 212, 191, 0.07), transparent 32%),
+    #070b16;
+  box-sizing: border-box;
+}
+
+.services-page h1 {
+  margin: 30px 0 10px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  font-weight: 800;
+}
+
+.section-description {
+  color: #9ba9c4;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0 0 36px;
+}
+
+.active-ticket-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 18px;
+  border: 1px solid rgba(167, 139, 250, 0.5);
+  border-radius: 12px;
+  background: rgba(139, 92, 246, 0.13);
+  color: #c4b5fd;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.active-ticket-button:hover {
+  background: rgba(139, 92, 246, 0.25);
+  transform: translateY(-1px);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 22px;
+}
+
+.service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 25px;
+  border: 1px solid #26334d;
+  border-radius: 20px;
+  background: linear-gradient(
+    145deg,
+    rgba(21, 31, 53, 0.96),
+    rgba(12, 19, 34, 0.98)
+  );
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25px;
+  right: 25px;
+  height: 2px;
+  background: linear-gradient(90deg, #8b5cf6, #2dd4bf);
+  opacity: 0.75;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(139, 92, 246, 0.65);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
+}
+
+.service-card h2 {
+  margin: 8px 0 12px;
+  font-size: 1.3rem;
+  font-weight: 750;
+  letter-spacing: -0.3px;
+  overflow-wrap: anywhere;
+}
+
+.service-card p {
+  color: #aab7d0;
+  font-size: 0.94rem;
+  line-height: 1.7;
+  margin: 0 0 18px;
+  overflow-wrap: anywhere;
+}
+
+.service-card p strong {
+  color: #5eead4;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+.view-queue-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: auto;
+  padding: 13px 16px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: linear-gradient(110deg, #8b5cf6, #6d5dfc);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: center;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.view-queue-button:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
+.view-queue-button:focus-visible,
+.active-ticket-button:focus-visible {
+  outline: 2px solid #5eead4;
+  outline-offset: 4px;
+}
+
+.services-page button:active,
+.view-queue-button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 600px) {
+  .services-page {
+    padding: 28px 17px;
+  }
+
+  .services-page h1 {
+    margin-top: 24px;
+    letter-spacing: -0.8px;
+  }
+
+  .section-description {
+    margin-bottom: 26px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .service-card {
+    padding: 22px;
+    border-radius: 17px;
+  }
+
+  .service-card:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .view-queue-button,
+  .active-ticket-button {
+    transition: none;
+  }
+
+  .service-card:hover,
+  .view-queue-button:hover,
+  .active-ticket-button:hover {
+    transform: none;
+  }
+}
+.service-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 16px;
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  border-radius: 15px;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.2),
+    rgba(45, 212, 191, 0.12)
+  );
+  font-size: 25px;
+}
+.service-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.service-icon {
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.22),
+    rgba(45, 212, 191, 0.12)
+  );
+  font-size: 27px;
+}
+
+.service-card-heading h2 {
+  margin: 0 0 6px;
+  overflow-wrap: anywhere;
+}
+
+.service-label {
+  color: #a78bfa;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 1.2px;
+}
+
+.service-description {
+  min-height: 48px;
+}
+
+.service-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 8px 0 22px;
+}
+
+.service-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 13px;
+  border: 1px solid #26334d;
+  border-radius: 12px;
+  background: rgba(7, 11, 22, 0.45);
+}
+
+.service-stat span {
+  color: #9ba9c4;
+  font-size: 12px;
+}
+
+.service-stat strong {
+  color: #5eead4;
+  font-size: 19px;
+}
+
+.view-queue-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+}
+
+@media (max-width: 400px) {
+  .service-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* SmartQ: Premium ticket container */
+.ticket-page .ticket-card {
+  background: linear-gradient(145deg, #111a2d, #0b1120);
+  border: 1px solid #293750;
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
+  color: #f1f5ff;
+}
+
+/* Ticket heading */
+.ticket-page .ticket-card h1 {
+  color: #f8fafc !important;
+  font-size: clamp(22px, 4vw, 30px);
+  margin: 18px 0 10px;
+}
+
+.ticket-page .ticket-card h2 {
+  color: #c4b5fd !important;
+  font-size: 17px;
+  margin-bottom: 18px;
+}
+
+/* Ticket label */
+.ticket-page .ticket-label {
+  color: #a78bfa;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .ticket-page .ticket-card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+}
+/* SmartQ: Service card heading */
+.services-page .service-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.services-page .service-icon {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(139, 92, 246, 0.14);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 15px;
+  font-size: 26px;
+}
+
+.services-page .service-card-heading h2 {
+  margin: 0 0 6px;
+}
+
+.services-page .service-label {
+  display: inline-block;
+  color: #a78bfa;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+/* Keep card headings aligned */
+.services-page .service-card-heading > div:last-child {
+  min-width: 0;
+}
+
+.services-page .service-card-heading h2 {
+  overflow-wrap: anywhere;
+}
+
+/* Keyboard accessibility */
+.services-page .view-queue-button:focus-visible {
+  outline: 2px solid #c4b5fd;
+  outline-offset: 3px;
+}
+/* SmartQ: Empty services state */
+.services-page .empty-services {
+  max-width: 480px;
+  margin: 50px auto;
+  padding: 32px 24px;
+  text-align: center;
+  background: #10182a;
+  border: 1px solid #293750;
+  border-radius: 18px;
+}
+
+.services-page .empty-services-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: rgba(139, 92, 246, 0.15);
+  color: #c4b5fd;
+  font-size: 28px;
+}
+
+.services-page .empty-services h2 {
+  color: #f1f5ff;
+  margin-bottom: 10px;
+}
+
+.services-page .empty-services p {
+  color: #9ba9c4;
+  line-height: 1.6;
+  margin: 0;
+}
+/* SmartQ: Consistent service card layout */
+.services-page .service-grid {
+  align-items: stretch;
+}
+
+.services-page .service-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.services-page .service-card .service-description {
+  flex-grow: 1;
+}
+
+.services-page .service-card .service-stats {
+  margin-top: 18px;
+}
+
+.services-page .service-card .view-queue-button {
+  margin-top: auto;
+}
+
+/* Prevent cards from becoming too narrow */
+@media (max-width: 600px) {
+  .services-page .service-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .services-page .service-card {
+    height: auto;
+  }
+}
+/* SmartQ: Loading screen */
+.services-page .services-loading {
+  min-height: 55vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.services-page .services-loading h2 {
+  color: #f1f5ff;
+  margin: 8px 0 0;
+}
+
+.services-page .services-loading p {
+  color: #9ba9c4;
+  margin: 0;
+}
+
+.services-page .loading-spinner {
+  width: 38px;
+  height: 38px;
+  border: 4px solid #26334d;
+  border-top-color: #8b5cf6;
+  border-radius: 50%;
+  animation: smartq-spin 0.8s linear infinite;
+}
+
+@keyframes smartq-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* SmartQ: Error screen */
+.services-page .services-error {
+  max-width: 480px;
+  margin: 50px auto;
+  padding: 32px 24px;
+  text-align: center;
+  background: #10182a;
+  border: 1px solid #49334d;
+  border-radius: 18px;
+}
+
+.services-page .services-error-icon {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 16px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #2b1725;
+  border: 1px solid #71304b;
+  color: #fda4af;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.services-page .services-error h2 {
+  color: #f1f5ff;
+  margin-bottom: 10px;
+}
+
+.services-page .services-error p {
+  color: #aab8d0;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.services-page .retry-button {
+  margin-top: 12px;
+  padding: 12px 20px;
+  background: #8b5cf6;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.services-page .retry-button:hover {
+  background: #7c3aed;
+}
+/* SmartQ: Service search */
+.services-page .service-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 520px;
+  margin: 24px 0 30px;
+  padding: 0 14px;
+  background: #10182a;
+  border: 1px solid #293750;
+  border-radius: 12px;
+}
+
+.services-page .service-search:focus-within {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
+}
+
+.services-page .service-search > span {
+  color: #9ba9c4;
+}
+
+.services-page .service-search input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f1f5ff;
+  font-size: 14px;
+}
+
+.services-page .service-search input::placeholder {
+  color: #71809d;
+}
+
+.services-page .service-search button {
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px;
+}
+/* SmartQ: Compact Services Page */
+.services-page {
+  padding-top: 24px;
+  padding-bottom: 28px;
+}
+
+.services-page > h1 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.services-page > .section-description {
+  margin-bottom: 18px;
+}
+
+/* Compact search bar spacing */
+.services-page .service-search {
+  margin-top: 16px;
+  margin-bottom: 22px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Compact service cards */
+.services-page .service-grid {
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.services-page .service-card {
+  padding: 18px;
+  border-radius: 16px;
+}
+
+/* Smaller service icons */
+.services-page .service-icon {
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
+  border-radius: 12px;
+}
+
+.services-page .service-card-heading {
+  gap: 11px;
+  margin-bottom: 12px;
+}
+
+.services-page .service-card h2 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.services-page .service-card .service-description {
+  font-size: 13px;
+  line-height: 1.5;
+  min-height: 40px;
+}
+
+/* Compact waiting-time statistics */
+.services-page .service-stats {
+  gap: 10px;
+  margin: 14px 0;
+}
+
+.services-page .service-stat {
+  padding: 10px;
+}
+
+.services-page .service-stat strong {
+  font-size: 18px;
+}
+
+/* Compact View Queue button */
+.services-page .view-queue-button {
+  padding: 10px 13px;
+  font-size: 14px;
+}
+/* SmartQ: Available service count */
+.services-page .service-count {
+  color: #9ba9c4;
+  font-size: 13px;
+  margin: 10px 0 16px;
+}
+
+.services-page .service-count::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: #2dd4bf;
+  vertical-align: middle;
+}
+/* SmartQ: Search results count */
+.services-page .search-results-count {
+  max-width: 520px;
+  margin: -10px auto 20px;
+  color: #9ba9c4;
+  font-size: 13px;
+  text-align: left;
+}
+.services-page .service-label.queue-busy {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+}
+
+.services-page .service-label.queue-available {
+  color: #2dd4bf;
+  background: rgba(45, 212, 191, 0.1);
+  border: 1px solid rgba(45, 212, 191, 0.25);
+}

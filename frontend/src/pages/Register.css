@@ -1,0 +1,226 @@
+.register-page {
+    min-height: calc(10vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: #f8f9fa;
+}
+.register-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 35px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+.register-card h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.register-card > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+.register-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.register-card input {
+    padding:13px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+.register-card input:focus {
+    border-color: #2563eb;
+}
+.register-card button {
+    padding: 13px;
+    margin-top:5px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size:16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.register-card button:hover {
+    background: #1d4ed8;
+}
+.register-card button:disabled {
+    background : #9ca3af;
+    cursor: not-allowed;
+}
+.login-link {
+    margin-top: 20px;
+    font-size: 14px;
+}
+.login-link span {
+    color: #2563eb;
+    font-weight: 600;
+    cursor: pointer;
+}
+@media (max-width: 600px) {
+    .register-page {
+        padding: 30px 15px;
+    }
+    .register-card {
+        padding: 25px 20px;
+    }
+}
+/* ===== SmartQ Create Account Page ===== */
+
+.register-page {
+  min-height: calc(100vh - 70px);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 18px;
+  background:
+    radial-gradient(
+      ellipse at top,
+      rgba(139, 92, 246, 0.14),
+      transparent 55%
+    ),
+    #070b16;
+  color: #f1f5ff;
+}
+
+.register-card {
+  width: 100%;
+  max-width: 440px;
+  box-sizing: border-box;
+  padding: 34px;
+  background: linear-gradient(145deg, #151f35, #10182a);
+  border: 1px solid #26334d;
+  border-radius: 22px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);
+}
+
+.register-card h1 {
+  margin: 0 0 10px;
+  text-align: center;
+  color: #f1f5ff;
+  font-size: 29px;
+  font-weight: 750;
+  letter-spacing: -0.5px;
+}
+
+.register-card > p {
+  margin: 0 0 26px;
+  text-align: center;
+  color: #9ba9c4;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Registration form */
+.register-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.register-card input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  border: 1px solid #34415d;
+  border-radius: 11px;
+  background: #0b1222;
+  color: #f1f5ff;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.register-card input::placeholder {
+  color: #8290aa;
+}
+
+.register-card input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+}
+
+/* Create account button */
+.register-card button {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 4px;
+  padding: 14px 18px;
+  border: 1px solid #8b5cf6;
+  border-radius: 11px;
+  background: #8b5cf6;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.register-card button:hover:not(:disabled) {
+  background: #7c3aed;
+  transform: translateY(-1px);
+}
+
+.register-card button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Existing account link */
+.register-card .register-link {
+  margin: 22px 0 0;
+  text-align: center;
+  color: #9ba9c4;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.register-card .register-link a,
+.register-card .register-link span {
+  color: #a78bfa;
+  font-weight: 650;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.register-card .register-link a:hover,
+.register-card .register-link span:hover {
+  color: #c4b5fd;
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .register-page {
+    padding: 28px 14px;
+  }
+
+  .register-card {
+    padding: 26px 20px;
+    border-radius: 18px;
+  }
+
+  .register-card h1 {
+    font-size: 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .register-card input,
+  .register-card button {
+    transition: none;
+  }
+
+  .register-card button:hover {
+    transform: none;
+  }
+}

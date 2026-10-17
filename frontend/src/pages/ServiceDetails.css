@@ -1,0 +1,68 @@
+.service-details {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+.service-details h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+.service-details > p {
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+.queue-info {
+    padding: 25px;
+    border-radius: 12px;
+    background: #f5f7fb;
+}
+.queue-info h2 {
+    margin-bottom: 20px;
+}
+.queue-info p {
+    font-size: 18px;
+    margin: 12px 0;
+}
+.queue-info button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.queue-info button:hover {
+    background: #1d4ed8;
+}
+.queue-info button:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+@media (max-width: 768px) {
+    .service-details {
+        margin: 30px 15px;
+        padding: 25px 20px;
+    }
+    .service-details h1 {
+        font-size: 28px;
+    }
+    .service-details > p {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+    .queue-info {
+        padding: 20px 15px;
+    }
+    .queue-info p {
+        font-size: 16px;
+    }
+}

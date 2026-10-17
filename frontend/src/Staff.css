@@ -1,0 +1,244 @@
+/* ===== SmartQ Staff Dashboard ===== */
+
+.staff-page {
+  min-height: calc(100vh - 70px);
+  box-sizing: border-box;
+  padding: 38px 20px;
+  background:
+    radial-gradient(
+      ellipse at top,
+      rgba(139, 92, 246, 0.12),
+      transparent 55%
+    ),
+    #070b16;
+  color: #f1f5ff;
+}
+
+.staff-container {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.staff-container > h1 {
+  margin: 0 0 26px;
+  color: #f1f5ff;
+  font-size: 30px;
+  font-weight: 750;
+  letter-spacing: -0.5px;
+  text-align: center;
+}
+
+/* Summary statistics */
+.staff-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.staff-summary p {
+  margin: 0;
+  padding: 22px 18px;
+  background: linear-gradient(145deg, #151f35, #10182a);
+  border: 1px solid #26334d;
+  border-radius: 15px;
+  color: #9ba9c4;
+  font-size: 14px;
+  line-height: 1.6;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.staff-summary p strong {
+  color: #c4b5fd;
+}
+
+/* Main queue control card */
+.staff-card {
+  box-sizing: border-box;
+  padding: 28px;
+  background: linear-gradient(145deg, #151f35, #10182a);
+  border: 1px solid #26334d;
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+}
+
+/* Service dropdown */
+.staff-card select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  border: 1px solid #34415d;
+  border-radius: 11px;
+  background: #0b1222;
+  color: #f1f5ff;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+}
+
+.staff-card select:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+}
+
+.staff-card select option {
+  background: #10182a;
+  color: #f1f5ff;
+}
+
+/* Selected queue details */
+.queue-count {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.queue-count p {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 16px;
+  background: #0b1222;
+  border: 1px solid #26334d;
+  border-radius: 12px;
+  color: #9ba9c4;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.queue-count p strong {
+  display: inline-block;
+  margin-top: 5px;
+  color: #2dd4bf;
+}
+
+.queue-count .queue-active {
+  color: #2dd4bf;
+}
+
+.queue-count .queue.Empty {
+  color: #fbbf24;
+}
+
+/* Buttons */
+.staff-card button {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 46px;
+  padding: 13px 16px;
+  border-radius: 11px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.serve-button {
+  margin-bottom: 12px;
+  border: 1px solid #8b5cf6;
+  background: #8b5cf6;
+  color: #ffffff;
+}
+
+.serve-button:hover:not(:disabled) {
+  background: #7c3aed;
+  transform: translateY(-1px);
+}
+
+.serve-button:disabled {
+  background: #28334b;
+  border-color: #34415d;
+  color: #8290aa;
+  cursor: not-allowed;
+}
+
+.refresh-button {
+  border: 1px solid #34415d;
+  background: #10182a;
+  color: #c4b5fd;
+}
+
+.refresh-button:hover:not(:disabled) {
+  background: #202b45;
+  border-color: #8b5cf6;
+  transform: translateY(-1px);
+}
+
+.staff-message {
+  margin: 18px 0 0;
+  color: #2dd4bf;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Tablet */
+@media (max-width: 700px) {
+  .staff-page {
+    padding: 28px 16px;
+  }
+
+  .staff-summary {
+    gap: 10px;
+  }
+
+  .staff-summary p {
+    padding: 16px 12px;
+    font-size: 13px;
+  }
+
+  .staff-card {
+    padding: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .staff-container > h1 {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+
+  .staff-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .staff-summary p {
+    padding: 14px 16px;
+  }
+
+  .staff-card {
+    padding: 16px;
+    border-radius: 15px;
+  }
+
+  .queue-count {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .queue-count p {
+    padding: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .staff-card button {
+    transition: none;
+  }
+
+  .staff-card button:hover {
+    transform: none;
+  }
+}
+.staff-summary p strong {
+  display: block;
+  margin-top: 8px;
+  color: #c4b5fd;
+  font-size: 28px;
+  line-height: 1.2;
+}
