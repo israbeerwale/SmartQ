@@ -825,46 +825,55 @@ a:focus-visible {
   }
 }
 
-/* Mobile L, M and S */
+/* SmartQ navbar - improved mobile layout */
 @media (max-width: 600px) {
   .navbar {
-    justify-content: center;
-    gap: 10px;
-    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 14px 10px;
   }
 
   .logo {
     width: 100%;
+    margin: 0;
     text-align: center;
     font-size: 23px;
   }
 
   .nav-links {
-    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 8px;
+    width: 100%;
   }
 
   .nav-links a {
     font-size: 13px;
+    padding: 7px 4px;
   }
 
   .nav-links button {
     padding: 8px 10px;
     font-size: 12px;
+    white-space: nowrap;
   }
 
   .user-email {
-    max-width: 120px;
+    max-width: 140px;
     font-size: 11px;
+    text-align: center;
+    overflow-wrap: anywhere;
   }
 }
 
-/* Extra-small phones: 320px */
 @media (max-width: 360px) {
   .navbar {
-    padding: 10px 8px;
-    gap: 8px;
+    padding: 12px 6px;
+    gap: 10px;
   }
 
   .nav-links {
@@ -881,6 +890,6 @@ a:focus-visible {
   }
 
   .user-email {
-    max-width: 95px;
+    max-width: 115px;
   }
 }
