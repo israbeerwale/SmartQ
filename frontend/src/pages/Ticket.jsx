@@ -82,7 +82,7 @@ const isCompleted =
   }, [currentWaiting, turnNotification, soundEnabled]);
   useEffect(() => {
     if (!serviceId) return;
-    const socket = io(`http://${API_URL}`);
+    const socket = io(`${API_URL}`);
     socket.on("queueUpdated", (updatedService) => {
       if (String(updatedService._id) === String(serviceId)) {
         setLastUpdated(new Date());
@@ -128,7 +128,7 @@ const isCompleted =
     const updateQueue = async () => {
       try {
         const response = await fetch(
-          `http://${API_URL}/api/services/${serviceId}`,
+          `${API_URL}/api/services/${serviceId}`,
         );
         const data = await response.json();
         setLastUpdated(new Date());
@@ -399,7 +399,7 @@ useEffect(() => {
               }
               try {
                 const response = await fetch(
-                  `http://${API_URL}/api/services/${serviceId}/cancel`,
+                  `${API_URL}/api/services/${serviceId}/cancel`,
                   {
                     method: "POST",
                     headers: {

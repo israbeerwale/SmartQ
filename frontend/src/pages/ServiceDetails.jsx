@@ -20,7 +20,7 @@ const activeTicket = activeTicketKey
   ? localStorage.getItem(activeTicketKey)
   : null;
   useEffect(() =>{
-    fetch(`http://${API_URL}/api/services/${id}`)
+    fetch(`${API_URL}/api/services/${id}`)
     .then((response) => response.json())
     .then((data) => {
       console.log("SERVICE DATA:",data);
@@ -49,7 +49,7 @@ const activeTicket = activeTicketKey
     try{
        setJoined(true);
        const response = await fetch(
-        `http://${API_URL}/api/services/${id}/join`,
+        `${API_URL}/api/services/${id}/join`,
         {
           method: "POST",
           headers: {

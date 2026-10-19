@@ -64,7 +64,7 @@ function Services() {
   // Then sync with the backend
   try {
     const response = await fetch(
-      `http://${API_URL}/api/services/active-ticket/${loggedInUser.id}`
+      `${API_URL}/api/services/active-ticket/${loggedInUser.id}`
     );
 
     if (!response.ok) {
@@ -109,7 +109,7 @@ function Services() {
     setError("");
 
     try {
-      const response = await fetch(`http://${API_URL}/api/services`, {
+      const response = await fetch(`${API_URL}/api/services`, {
         cache: "no-store",
       });
 

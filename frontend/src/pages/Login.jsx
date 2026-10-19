@@ -18,7 +18,7 @@ function Login() {
             setLoading(true);
             try {
               const response = await fetch(
-                `http://${API_URL}/api/auth/login`,
+                `${API_URL}/api/auth/login`,
                 {
                   method: "POST",
                   headers: {

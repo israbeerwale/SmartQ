@@ -46,7 +46,7 @@ function TicketHistory() {
 
       try {
         const response = await fetch(
-          `http://${API_URL}/api/services/history/${userId}`,
+          `${API_URL}/api/services/history/${userId}`,
         );
 
         if (!response.ok) {
@@ -62,7 +62,7 @@ function TicketHistory() {
         setLoading(false);
       }
     };
-    const socket = io(`http://${API_URL}`);
+    const socket = io(`${API_URL}`);
     socket.on("ticketHistoryUpdated", () => {
       fetchHistory();
     });
