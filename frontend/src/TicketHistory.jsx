@@ -62,7 +62,7 @@ function TicketHistory() {
         setLoading(false);
       }
     };
-    const socket = io("http://localhost:5000");
+    const socket = io(`http://${API_URL}`);
     socket.on("ticketHistoryUpdated", () => {
       fetchHistory();
     });

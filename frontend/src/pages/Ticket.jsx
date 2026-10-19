@@ -82,7 +82,7 @@ const isCompleted =
   }, [currentWaiting, turnNotification, soundEnabled]);
   useEffect(() => {
     if (!serviceId) return;
-    const socket = io("http://localhost:5000");
+    const socket = io(`http://${API_URL}`);
     socket.on("queueUpdated", (updatedService) => {
       if (String(updatedService._id) === String(serviceId)) {
         setLastUpdated(new Date());
