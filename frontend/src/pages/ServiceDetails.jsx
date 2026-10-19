@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./ServiceDetails.css";
+import API_URL from "../api";
 function ServiceDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ const activeTicket = activeTicketKey
   ? localStorage.getItem(activeTicketKey)
   : null;
   useEffect(() =>{
-    fetch(`http://localhost:5000/api/services/${id}`)
+    fetch(`http://${API_URL}/api/services/${id}`)
     .then((response) => response.json())
     .then((data) => {
       console.log("SERVICE DATA:",data);
@@ -48,7 +49,7 @@ const activeTicket = activeTicketKey
     try{
        setJoined(true);
        const response = await fetch(
-        `http://localhost:5000/api/services/${id}/join`,
+        `http://${API_URL}/api/services/${id}/join`,
         {
           method: "POST",
           headers: {

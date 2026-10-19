@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import "./TicketHistory.css";
+import API_URL from "./api";
 
 function TicketHistory() {
   const [history, setHistory] = useState([]);
@@ -45,7 +46,7 @@ function TicketHistory() {
 
       try {
         const response = await fetch(
-          `http://localhost:5000/api/services/history/${userId}`,
+          `http://${API_URL}/api/services/history/${userId}`,
         );
 
         if (!response.ok) {

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Services.css";
+import API_URL from "../api";
 const serviceIcons = {
   "Hair Salon": "✂️",
   "General Consultation": "🩺",
@@ -63,7 +64,7 @@ function Services() {
   // Then sync with the backend
   try {
     const response = await fetch(
-      `http://localhost:5000/api/services/active-ticket/${loggedInUser.id}`
+      `http://${API_URL}/api/services/active-ticket/${loggedInUser.id}`
     );
 
     if (!response.ok) {

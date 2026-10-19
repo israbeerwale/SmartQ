@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Staff.css";
+import API_URL from "./api";
 
 function Staff() {
   const [message, setMessage] = useState("");
@@ -10,7 +11,7 @@ function Staff() {
   // Fetch services and automatically refresh every 5 seconds
   useEffect(() => {
     const loadServices = () => {
-      fetch("http://localhost:5000/api/services", {
+      fetch(`http://${API_URL}/api/services`, {
         cache: "no-store",
       })
         .then((response) => response.json())
@@ -47,7 +48,7 @@ function Staff() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/services/${serviceId}/serve`,
+        `http://${API_URL}/api/services/${serviceId}/serve`,
         {
           method: "POST",
         }
@@ -64,7 +65,7 @@ function Staff() {
 
       // Fetch latest numbers immediately after serving
       const servicesResponse = await fetch(
-        "http://localhost:5000/api/services"
+        `http://${API_URL}/api/services`
       );
 
       const updatedServices = await servicesResponse.json();
@@ -173,7 +174,7 @@ function Staff() {
             setRefreshing(true);
             try{
               const response = await fetch(
-                "http://localhost:5000/api/services"
+                `http://${API_URL}/api/services`
                 ,
                 {
                   cache: "no-store",

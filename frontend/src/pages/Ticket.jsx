@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import "./Ticket.css";
 import { io } from "socket.io-client";
+import API_URL from "../api";
 
 function Ticket() {
   const location = useLocation();
@@ -127,7 +128,7 @@ const isCompleted =
     const updateQueue = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/services/${serviceId}`,
+          `http://${API_URL}/api/services/${serviceId}`,
         );
         const data = await response.json();
         setLastUpdated(new Date());
@@ -398,7 +399,7 @@ useEffect(() => {
               }
               try {
                 const response = await fetch(
-                  `http://localhost:5000/api/services/${serviceId}/cancel`,
+                  `http://${API_URL}/api/services/${serviceId}/cancel`,
                   {
                     method: "POST",
                     headers: {

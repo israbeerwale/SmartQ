@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MyQueue.css";
+import API_URL from "./api";
 
 function MyQueue() {
     const [history, setHistory] = useState([]);
@@ -11,7 +12,7 @@ function MyQueue() {
     useEffect(() => {
         if (!loggedInUser) return;
         fetch(
-            `http://localhost:5000/api/auth/history/${loggedInUser.id}`
+            `${API_URL}/api/auth/history/${loggedInUser.id}`
         )
         .then((response) => response.json())
         .then((data) => {
