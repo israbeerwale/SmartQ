@@ -192,3 +192,17 @@
     transform: none;
   }
 }
+.change-photo-button {
+  display: inline-block;
+  margin: 10px 0 16px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.change-photo-button:hover {
+  background: #1d4ed8;
+}
