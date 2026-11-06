@@ -6,9 +6,15 @@ import defaultPhoto from "./assets/profile.jpg";
 function Profile() {
   const navigate = useNavigate();
 
-  const loggedInUser = JSON.parse(
-    localStorage.getItem("loggedInUser") || "null"
-  );
+  let loggedInUser = null;
+
+  try {
+    loggedInUser = JSON.parse(
+      localStorage.getItem("loggedInUser") || "null"
+    );
+  } catch {
+    loggedInUser = null;
+  }
 
   if (!loggedInUser) {
     return (
@@ -24,19 +30,25 @@ function Profile() {
     );
   }
 
+  // Give each account its own storage key.
+  const userKey = String(
+    loggedInUser.id ??
+    loggedInUser._id ??
+    loggedInUser.email.trim().toLowerCase()
+  );
+
   return (
     <ProfileContent
-      key={loggedInUser.email.trim().toLowerCase()}
+      key={userKey}
       loggedInUser={loggedInUser}
+      userKey={userKey}
       navigate={navigate}
     />
   );
 }
 
-function ProfileContent({ loggedInUser, navigate }) {
-  const photoKey = `profilePhoto_${loggedInUser.email
-    .trim()
-    .toLowerCase()}`;
+function ProfileContent({ loggedInUser, userKey, navigate }) {
+  const photoKey = `smartq_profile_photo_${userKey}`;
 
   const [profilePhoto, setProfilePhoto] = useState(
     () => localStorage.getItem(photoKey) || defaultPhoto
@@ -48,6 +60,7 @@ function ProfileContent({ loggedInUser, navigate }) {
 
   const handlePhotoChange = (event) => {
     const file = event.target.files?.[0];
+
     if (!file) return;
 
     if (!file.type.startsWith("image/")) {
@@ -71,7 +84,7 @@ function ProfileContent({ loggedInUser, navigate }) {
         localStorage.setItem(photoKey, imageData);
         setProfilePhoto(imageData);
       } catch (error) {
-        alert("Unable to save photo. Please choose a smaller image.");
+        alert("Unable to save image. Please choose a smaller photo.");
         console.error(error);
       }
     };
@@ -89,19 +102,25 @@ function ProfileContent({ loggedInUser, navigate }) {
     <main className="profile-page">
       <div className="profile-card">
 
-        <div className="profile-avatar">
-          <img src={profilePhoto} alt="Profile" />
-        </div>
+        {/* Profile Picture and Add Button */}
+        <div className="profile-photo-wrapper">
+          <div className="profile-avatar">
+            <img src={profilePhoto} alt="User Profile" />
+          </div>
 
-        <label className="change-photo-button">
-          Change Profile Photo
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handlePhotoChange}
-            hidden
-          />
-        </label>
+          <label
+            className="profile-add-photo"
+            title="Add or change profile photo"
+          >
+            +
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handlePhotoChange}
+              hidden
+            />
+          </label>
+        </div>
 
         <h1>My Profile</h1>
 
