@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Profile.css";
-import defaultPhoto from "./assets/profile.jpg";
+
 
 function Profile() {
   const navigate = useNavigate();
@@ -51,7 +51,7 @@ function ProfileContent({ loggedInUser, userKey, navigate }) {
   const photoKey = `smartq_profile_photo_${userKey}`;
 
   const [profilePhoto, setProfilePhoto] = useState(
-    () => localStorage.getItem(photoKey) || defaultPhoto
+    () => localStorage.getItem(photoKey) || ""
   );
 
   const activeTicket = JSON.parse(
@@ -105,8 +105,10 @@ function ProfileContent({ loggedInUser, userKey, navigate }) {
         {/* Profile Picture and Add Button */}
         <div className="profile-photo-wrapper">
           <div className="profile-avatar">
-            <img src={profilePhoto} alt="User Profile" />
-          </div>
+  {profilePhoto && (
+    <img src={profilePhoto} alt="User Profile" />
+  )}
+</div>
 
           <label
             className="profile-add-photo"
